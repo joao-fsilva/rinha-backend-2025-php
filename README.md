@@ -2,7 +2,7 @@
 
 ## Sobre o Desafio
 
-Desenvolver uma API que intermedia pagamentos entre dois proessadores. Ganha quem lucrar mais, processar mais rápido e ter consistência. Link para o desafio: [Rinha de Backend 2025](https://github.com/zanfranceschi/rinha-de-backend-2025)
+Desenvolver uma API que intermedia pagamentos entre dois processadores. Ganha quem lucrar mais, processar mais rápido e ter consistência. Link para o desafio: [Rinha de Backend 2025](https://github.com/zanfranceschi/rinha-de-backend-2025)
 
 ### Fluxo de Processamento
 
@@ -32,6 +32,6 @@ Desenvolver uma API que intermedia pagamentos entre dois proessadores. Ganha que
 | :------ | :---- |:----------| :----------------------------------- |
 | `nginx` | 0.1   | 30MB      | Load Balancer                        |
 | `app1`  | 0.6   | 120MB     | API Server + Worker (PHP/Swoole)     |
-| `app2`  | 0.6   | 130MB     | API Server + Worker (PHP/Swoole)     |
-| `cache` | 0.2   | 70MB      | Redis (Fila e Armazenamento)         |
+| `app2`  | 0.6   | 120MB     | API Server + Worker (PHP/Swoole)     |
+| `cache` | 0.2   | 80MB      | Redis (Fila e Armazenamento)         |
 | **Total** | **1.5** | **350MB** | ✅                                   |

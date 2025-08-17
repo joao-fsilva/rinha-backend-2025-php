@@ -9,7 +9,7 @@ services:
       resources:
         limits:
           cpus: '0.2'
-          memory: '70MB'
+          memory: '80MB'
     networks:
       - rinha-net
   app1:
@@ -30,7 +30,7 @@ services:
       resources:
         limits:
           cpus: '0.6'
-          memory: '130M'
+          memory: '120M'
 
   app2:
     build:

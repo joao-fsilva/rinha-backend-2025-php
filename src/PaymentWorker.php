@@ -11,7 +11,7 @@ class PaymentWorker
 {
     private const PAYMENT_QUEUE_KEY = 'payment_queue';
     private const REQUEST_TIMEOUT = 5;
-    private const ACCEPTABLE_LATENCY_MS = 20;
+    private const ACCEPTABLE_LATENCY_MS = 10;
 
     public function __construct(private RedisPool $redisPool)
     {
@@ -52,9 +52,8 @@ class PaymentWorker
         $correlationId = (string) $data['correlationId'];
         $amount = (float) $data['amount'];
 
-        $preciseTimestamp = microtime(true);
-        $date = \DateTime::createFromFormat('U.u', sprintf('%.6f', $preciseTimestamp));
-        $requestedAt = $date->setTimezone(new \DateTimeZone('UTC'))->format('Y-m-d\TH:i:s.u\Z');
+        $requestedAt = (new \DateTime('now', new \DateTimeZone('UTC')))
+            ->format('Y-m-d\TH:i:s.v\Z');
 
         $data['requestedAt'] = $requestedAt;
 

@@ -16,7 +16,7 @@ use App\PaymentProcessor;
 $server = new Server("0.0.0.0", 80, SWOOLE_BASE);
 
 $server->set([
-    'worker_num' => 1, // Optimal for 0.5 CPU limit
+    'worker_num' => 1,
     'enable_coroutine' => true,
     'log_level' => SWOOLE_LOG_WARNING,
     'log_file' => '/dev/stderr' // Redirect logs to stderr for Docker
